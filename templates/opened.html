@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Cadastre-se</title>
+
+  <!-- CSS  -->
+{% include 'incs.html' %}
+</head>
+<body>
+{% include 'nav.html' %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      
+    <br><br>
+      <h3 class="header center red-text">Salas </h3>
+
+	  <form method="post">
+				
+				
+			<div class="row center">
+				<div class="col s6 offset-s3">
+					{% if a == 1%}
+						<h5 class="header center red-text">Sala Aberta </h5>
+					{% endif %}
+					{% if a == 0 %}
+						<h5 class="header center red-text">!!!Timeout!!!<br> verifique a conexão do módulo </h5>
+					{% endif %}
+					{% if a == 2 %}
+						<h5 class="header center red-text">Sua credencial expirou, contatar o administrador da sala</h5>
+					{% endif %}
+					{% if a == 3%}
+						<h5 class="header center red-text">Escolha uma sala!</h5>
+					{%endif%}
+			
+				</button>
+		</div>
+        
+     <br>
+	 <br>
+		</div>
+	</form>
+  </div>
+
+
+<!----Footer------>
+
+ {% include 'footer.html' %}
+
+
+  <!--  Scripts-->
+{% include 'scripts.html' %}
+
+  </body>
+</html>

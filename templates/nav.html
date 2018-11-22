@@ -1,0 +1,42 @@
+
+{%if session['username']%}
+<nav class="indigo" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">SmartLock</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/projeto/">Projeto</a></li>
+		<li><a href="/utilizar/"><i class="material-icons">lock_open</i>Utilizar</a></li>
+		<li><a href="/adicionar/"><i class="material-icons">person_add</i>Adicionar</a></li>
+		<li><a href="/log/"><i class="material-icons">description</i>Log</a></li>
+		<li><a href="/QR_code/"><i class="material-icons">person</i>QR code</a></li>
+		<li><a href="/logout/"><i class="material-icons">exit_to_app</i>Logout</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+		<li><a href="/projeto/">Projeto</a></li>
+		<li><a href="/utilizar/"><i class="material-icons">lock_open</i>Utilizar</a></li>
+		<li><a href="/adicionar/"><i class="material-icons">person_add</i>Adicionar</a></li>
+		<li><a href="/log/"><i class="material-icons">description</i>Log</a></li>
+		<li><a href="/QR_code/"><i class="material-icons">person</i>QR code</a></li>
+		<li><a href="/logout/"><i class="material-icons">exit_to_app</i>Logout</a></li></ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+{% else %}
+<nav class="indigo" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">SmartLock</a>
+      <ul class="right hide-on-med-and-down">
+		<li><a href="/projeto/">Projeto</a></li>
+		<li><a href="/cadastro/">Cadastro</a></li>
+		<li><a href="/login/">Login</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/projeto/">Projeto</a></li>
+		<li><a href="/cadastro/">Cadastro</a></li>
+		<li><a href="/login/">Login</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+{%endif%}
+

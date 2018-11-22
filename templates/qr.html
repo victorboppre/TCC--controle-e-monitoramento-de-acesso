@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Cadastre-se</title>
+
+  <!-- CSS  -->
+{% include 'incs.html' %}
+</head>
+<body>
+{% include 'nav.html' %}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+	
+      
+		<br><br>
+		<h3 class="header center red-text">Seu QR code é: </h3>
+		<div class="row">
+		<div class="col s4">
+		</div>
+		<div class="col s4">
+			<img class="responsive-img materialboxed" src="{{a}}"}>
+		</div>
+		<div class="col s4">
+		</div>
+		</div>
+		</div>
+	</div>       
+     <br>
+	 <br>
+
+  </div>
+
+
+<!----Footer------>
+
+ {% include 'footer.html' %}
+
+
+  <!--  Scripts-->
+{% include 'scripts.html' %}
+
+  </body>
+</html>
