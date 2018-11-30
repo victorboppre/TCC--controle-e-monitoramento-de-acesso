@@ -133,7 +133,7 @@ def utilizar():
                 return render_template('opened.html',a = 3)
             if not(db.use_room(user,salas)):
             	db.remove_room(user,salas)
-            	db.log_usage_room(user,salas,"Tempo expiridado:")
+            	db.log_usage_room(user,salas,"Tempo expirado:")
             	return render_template('opened.html',a = 2)
             topic2Subscribe = salas + "TCCeletricaEletronica"
             mqtt.set_msg(topic2Subscribe,'open')
@@ -160,6 +160,15 @@ def utilizar():
             return render_template('utilizar.html',a =salas)
     else:
         return redirect('/')
-
+		
+@app.route('/abc123/', methods=['POST', 'GET'])
+def nova_sala():
+    if request.method == 'POST':
+        acc = request.form['nome']
+        name = request.form['sala']
+        db.add_room(name,acc)
+        return redirect('/')
+    else:
+        return render_template('ad_adm.html',msg=0)
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

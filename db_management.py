@@ -16,7 +16,6 @@ def new_account(acc,pass1,pass2):
         write_nu = fb.put('/user/'+acc,'password',{'password':pass1})
         write_nu = fb.put('/user/'+acc,'salas_ativas',{'salas':'salas'})
         write_nu = fb.put('/user/'+acc,'mestre_salas',{'salas':'salas'})
-        write_nu = fb.put('/user/'+acc,'placas',{'placas':'placas'})
         
         return ['Novo usuário '+acc+' criado com sucesso!!!',2]
 
@@ -80,12 +79,15 @@ def use_room(user,room):
     request = fb.get('/user/'+user+'/salas_ativas',None)
     request1 = fb.get('/room/'+room+'/mestre/mestre',None)
     if (user in request1):
+        print("master")
         return 1
     elif (room in request) :
         time = request[room]
         if tempo(time['ano'],time['mes'],time['dia'],time['hora'],time['minuto']):
+            print("okay_notmaster")
             return 1
         else:
+            print("not_okay")
             return 0
 
 def log_usage_room(user,room,a):
