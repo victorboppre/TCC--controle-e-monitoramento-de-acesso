@@ -1,124 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Cadastre-se</title>
-
-  <!-- CSS  -->
-{% include 'incs.html' %}
-</head>
-<body>
-{% include 'nav.html' %}
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-    <br><br>
-      <h3 class="header center red-text">Salas </h3>
-	  {% if i %}
-		{%if j == 1 %}
-		<div class="row">
-		<div class="center-align"><h6 class="green">{{l}}</h6></div>
-		{% else %}
-		<div class="center-align"><h6 class="green">{{l}}</h6></div> 
-		{% endif %}
-		</div>
-	  {% endif %}
-
-	  <form method="post">
-				
-				
-			<div class="row center">
-			  <div class="col s6 offset-s3">
-			  {% if a%}
-				<select name="usuario" class="browser-default">
-					<option value="" disabled selected>Escolha um usuário</option>
-					
-                        {% for d in c %}
-                        <option value="{{d}}">{{d}}</option>
-                        {% endfor %}
-				</select>
-				
-				<select name="sala" class="browser-default">
-					<option value="" disabled selected>Escolha uma sala</option>
-					
-                        {% for b in a %}
-                        <option value="{{b}}">{{b}}</option>
-                        {% endfor %}
-				</select>		
-				<br>
-				    <div class="row">
-						<div class="col s4">
-							<select name="dia" class="browser-default">
-								<option value="" disabled selected>Dia</option>
-								{% for d in range(31) %}
-									<option value="{{d+1}}">{{d+1}}</option>
-								{% endfor %}
-							</select>
-						</div>
-						<div class="col s4">
-							<select name="mes" class="browser-default">
-								<option value="" disabled selected>Mês</option>
-								{% for d in range(12) %}
-									<option value="{{d+1}}">{{d+1}}</option>
-								{% endfor %}
-							</select>
-						</div>
-						<div class="col s4">
-						<select name="ano" class="browser-default">
-								<option value="" disabled selected>Ano</option>
-								{% for d in range(10) %}
-									<option value="{{d+2018}}">{{d+2018}}</option>
-								{% endfor %}
-							</select>
-						</div>
-					</div>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+		<title>Cadastre-se</title>
+		<!-- CSS  -->
+		{% include 'incs.html' %}
+	</head>
+	<body>
+		{% include 'nav.html' %}
+		<div class="section no-pad-bot" id="index-banner">
+			<div class="container">
+				<br><br>
+				<h3 class="header center red-text">Salas </h3>
+				{% if i %}
+					{%if j == 1 %}
 					<div class="row">
-					<div class="col s3 offset-s3">
-						<select name="hora" class="browser-default">
-								<option value="" disabled selected>hora</option>
-								{% for d in range(24) %}
+						<div class="center-align"><h6 class="green">{{l}}</h6></div>
+					{% else %}
+						<div class="center-align"><h6 class="green">{{l}}</h6></div>
+					{% endif %}
+				</div>
+			{% endif %}
+			<form method="post">
+				
+				
+				<div class="row center">
+					<div class="col s6 offset-s3">
+						{% if a%}
+							<select name="usuario" class="browser-default">
+								<option value="" disabled selected>Escolha um usuário</option>
+								
+								{% for d in c %}
 									<option value="{{d}}">{{d}}</option>
 								{% endfor %}
 							</select>
-					</div>
-					<div class="col s3">
-						<select name="minuto" class="browser-default">
-								<option value="" disabled selected>minuto</option>
-								{% for d in range(60) %}
-									<option value="{{d}}">{{d}}</option>
+							
+							<select name="sala" class="browser-default">
+								<option value="" disabled selected>Escolha uma sala</option>
+								
+								{% for b in a %}
+									<option value="{{b}}">{{b}}</option>
 								{% endfor %}
-						</select>
+							</select>
+							<br>
+							<div class="row">
+								<div class="col s4">
+									<select name="dia" class="browser-default">
+										<option value="" disabled selected>Dia</option>
+										{% for d in range(31) %}
+											<option value="{{d+1}}">{{d+1}}</option>
+										{% endfor %}
+									</select>
+								</div>
+								<div class="col s4">
+									<select name="mes" class="browser-default">
+										<option value="" disabled selected>Mês</option>
+										{% for d in range(12) %}
+											<option value="{{d+1}}">{{d+1}}</option>
+										{% endfor %}
+									</select>
+								</div>
+								<div class="col s4">
+									<select name="ano" class="browser-default">
+										<option value="" disabled selected>Ano</option>
+										{% for d in range(10) %}
+											<option value="{{d+2018}}">{{d+2018}}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s3 offset-s3">
+									<select name="hora" class="browser-default">
+										<option value="" disabled selected>hora</option>
+										{% for d in range(24) %}
+											<option value="{{d}}">{{d}}</option>
+										{% endfor %}
+									</select>
+								</div>
+								<div class="col s3">
+									<select name="minuto" class="browser-default">
+										<option value="" disabled selected>minuto</option>
+										{% for d in range(60) %}
+											<option value="{{d}}">{{d}}</option>
+										{% endfor %}
+									</select>
+								</div>
+							</div>
+							<button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+							</button>
+							
+						{% else %}
+							<h5 class="header center red-text">sem salas disponíveis </h5>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+						{% endif %}
+						
+						</button>
 					</div>
-					</div>
-				<button class="btn waves-effect waves-light" type="submit" name="action">Enviar
-				</button>
-				
-				{% else %}
-				 <h5 class="header center red-text">sem salas disponíveis </h5>
-				 <br>
-				 <br>
-				 <br>
-				 <br>
-				 <br>
-				{% endif %}
-			
-				</button>
-			</div>
-        
-     <br>
-	 <br>
+					
+					<br>
+					<br>
+				</div>
+			</form>
 		</div>
-	</form>
-  </div>
-
-
-<!----Footer------>
-
- {% include 'footer.html' %}
-
-
-  <!--  Scripts-->
-{% include 'scripts.html' %}
-
-  </body>
+		<!----Footer------>
+		{% include 'footer.html' %}
+		<!--  Scripts-->
+		{% include 'scripts.html' %}
+	</body>
 </html>

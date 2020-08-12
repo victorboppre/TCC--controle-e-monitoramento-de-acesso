@@ -1,62 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Cadastre-se</title>
-
-  <!-- CSS  -->
-{% include 'incs.html' %}
-</head>
-<body>
-{% include 'nav.html' %}
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      
-    <br><br>
-      <h3 class="header center red-text">Salas </h3>
-
-	  <form method="post">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+		<title>Cadastre-se</title>
+		<!-- CSS  -->
+		{% include 'incs.html' %}
+	</head>
+	<body>
+		{% include 'nav.html' %}
+		<div class="section no-pad-bot" id="index-banner">
+			<div class="container">
 				
-				
-			<div class="row center">
-			  <div class="col s6 offset-s3">
-			  {% if a%}
-				<select name="sala" class="browser-default">
-					<option value="" disabled selected>Escolha uma sala</option>
+				<br><br>
+				<h3 class="header center red-text">Salas </h3>
+				<form method="post">
 					
-                        {% for b in a %}
-                        <option value="{{b}}">{{b}}</option>
-                        {% endfor %}
-				</select>
-				<br>
-				<button class="btn waves-effect waves-light" type="submit" name="action">Enviar
-				</button>
-				
-				{% else %}
-				 <h5 class="header center red-text">sem salas disponíveis </h5>
-				{% endif %}
-			
-				<br>
-				<br>
-				<br>
-				<br>
-		</div>
-        
-     <br>
-	 <br>
-		</div>
-	</form>
-  </div>
-
-
-<!----Footer------>
-
- {% include 'footer.html' %}
-
-
-  <!--  Scripts-->
-{% include 'scripts.html' %}
-
-  </body>
-</html>
+					
+					<div class="row center">
+						<div class="col s6 offset-s3">
+							{% if a%}
+								<select name="sala" class="browser-default">
+									<option value="" disabled selected>Escolha uma sala</option>
+									
+									{% for b in a %}
+										<option value="{{b}}">{{b}}</option>
+									{% endfor %}
+								</select>
+								<br>
+								<button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+								</button>
+								
+							{% else %}
+								<h5 class="header center red-text">sem salas disponíveis </h5>
+							{% endif %}
+							
+							<br>
+							<br>
+							<br>
+							<br>
+						</div>
+						
+						<br>
+						<br>
+					</div>
+				</form>
+			</div>
+			<!----Footer------>
+			{% include 'footer.html' %}
+			<!--  Scripts-->
+			{% include 'scripts.html' %}
+		</body>
+	</html>

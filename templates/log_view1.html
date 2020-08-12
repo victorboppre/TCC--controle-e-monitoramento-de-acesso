@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Cadastre-se</title>
-
-  <!-- CSS  -->
-{% include 'incs.html' %}
-</head>
-<body>
-{% include 'nav.html' %}
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      
-    <br><br>
-      <h3 class="header center red-text">LOG</h3>
-	    <ul class="collection with-header">
-        <li class="collection-header"><h4>{{a}}</h4></li>
-		{% for c in b %}
-        <li class="collection-item">{{c}}</li>
-		{% endfor %}
-
-      </ul>
-
-  </div>
-  <br>
-  <br>
-
-
-<!----Footer------>
-
- {% include 'footer.html' %}
-
-
-  <!--  Scripts-->
-{% include 'scripts.html' %}
-
-  </body>
-</html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Cadastre-se</title>
+    <!-- CSS  -->
+    {% include 'incs.html' %}
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        
+        <br><br>
+        <h3 class="header center red-text">LOG</h3>
+        <ul class="collection with-header">
+          <li class="collection-header"><h4>{{a}}</h4></li>
+          {% for c in b %}
+            <li class="collection-item">{{c}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <br>
+      <br>
+      <!----Footer------>
+      {% include 'footer.html' %}
+      <!--  Scripts-->
+      {% include 'scripts.html' %}
+    </body>
+  </html>
