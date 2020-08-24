@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, session, escape, redirect, url_for
-import mqttManager as mqtt
+import mqtt_manager as mqtt
 import db_management as db
 from PIL import Image
 import pyqrcode
+from pyngrok import ngrok
 
 app = Flask(__name__)
 app.secret_key = '&%82$abcABC2425262728!@$%¨&*('
@@ -136,7 +137,7 @@ def utilizar():
             	db.log_usage_room(user,salas,"Tempo expirado:")
             	return render_template('opened.html',a = 2)
             topic2Subscribe = salas + "TCCeletricaEletronica"
-            mqtt.set_msg(topic2Subscribe,'open')
+            #mqtt.set_msg(topic2Subscribe,'open')
             topic2Subscribe += '1'
             a = mqtt.get_msg(topic2Subscribe)
             print('********************')
@@ -171,4 +172,5 @@ def nova_sala():
     else:
         return render_template('ad_adm.html',msg=0)
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port = 5000)
+    ngrok.connect(5000)

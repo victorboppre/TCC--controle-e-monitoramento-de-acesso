@@ -23,6 +23,7 @@ def get_msg(topicSubscribe):
     client.on_message = on_message
     global a
     a = b''
+    return a
     client.connect(Broker, PortBroker, KeepAliveBroker)
     client.subscribe(topicSubscribe)
     client.loop_start()
